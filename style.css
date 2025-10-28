@@ -53,26 +53,32 @@ body {
     line-height: 1;
 }
 
-/* Левая боковая картинка */
+/* Левая боковая картинка (уменьшена в 2 раза) */
 .side-image {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
+    width: 50%; /* раньше занимала всю высоту, теперь только половину ширины */
+    overflow: hidden;
 }
 
 .side-image img {
     height: 100%;
     width: auto;
     object-fit: cover;
+    transform: scale(0.5); /* уменьшение в 2 раза */
+    transform-origin: left center;
 }
 
-/* Правая нижняя картинка */
+/* Правая нижняя картинка (увеличена в 1.5 раза) */
 .bottom-right-image {
     position: absolute;
     bottom: 0;
     right: 0;
     width: 300px;
+    transform: scale(1.5);
+    transform-origin: bottom right;
 }
 
 .bottom-right-image img {
