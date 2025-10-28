@@ -1,30 +1,73 @@
+/* Основные настройки */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-}
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-}
-nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-}
-section {
-    padding: 20px;
-    margin: 20px;
-    background-color: white;
-    border-radius: 8px;
-}
-footer {
-    text-align: center;
-    padding: 10px 0;
-    background-color: #333;
-    color: white;
+    font-family: 'Arial', sans-serif;
+    background-color: #FFFFF0; /* основной фон */
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
 }
 
+/* Верхнее меню */
+.top-menu {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    display: flex;
+    gap: 20px;
+    font-weight: bold;
+}
+
+.top-menu a {
+    text-decoration: none;
+    color: #93FADF;
+    font-size: 18px;
+}
+
+/* Центр с названием */
+.center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #93FADF;
+}
+
+.center-text h1 {
+    font-size: 60px;
+    margin: 0;
+}
+
+.center-text h2 {
+    font-size: 50px;
+    margin: 0;
+}
+
+/* Левая боковая картинка */
+.side-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+.side-image img {
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Правая нижняя картинка */
+.bottom-right-image {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 250px; /* можно регулировать размер */
+}
+
+.bottom-right-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
