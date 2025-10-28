@@ -2,8 +2,8 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #FFFFF0; /* основной фон */
+    font-family: 'Oswald', sans-serif;
+    background-color: #FFFFF0;
     position: relative;
     height: 100vh;
     overflow: hidden;
@@ -12,37 +12,45 @@ body {
 /* Верхнее меню */
 .top-menu {
     position: absolute;
-    top: 20px;
-    right: 30px;
+    top: 25px;
+    right: 40px;
     display: flex;
-    gap: 20px;
-    font-weight: bold;
+    gap: 25px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .top-menu a {
     text-decoration: none;
-    color: #93FADF;
-    font-size: 18px;
+    color: #2F821B;
+    font-size: 20px;
+    transition: color 0.3s ease;
 }
 
-/* Центр с названием */
+.top-menu a:hover {
+    color: #93FADF;
+}
+
+/* Центральная надпись */
 .center-text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: #93FADF;
+    color: #2F821B;
 }
 
 .center-text h1 {
-    font-size: 60px;
+    font-size: 110px;
     margin: 0;
+    line-height: 0.9;
 }
 
 .center-text h2 {
-    font-size: 50px;
+    font-size: 100px;
     margin: 0;
+    line-height: 1;
 }
 
 /* Левая боковая картинка */
@@ -55,6 +63,7 @@ body {
 
 .side-image img {
     height: 100%;
+    width: auto;
     object-fit: cover;
 }
 
@@ -63,7 +72,7 @@ body {
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 250px; /* можно регулировать размер */
+    width: 300px;
 }
 
 .bottom-right-image img {
