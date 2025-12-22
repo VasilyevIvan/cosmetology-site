@@ -53,13 +53,12 @@ body {
     line-height: 1;
 }
 
-/* Левая боковая картинка (уменьшена в 2 раза) */
 .side-image {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
-    width: 50%; /* раньше занимала всю высоту, теперь только половину ширины */
+    width: 25%;
     overflow: hidden;
 }
 
@@ -67,8 +66,7 @@ body {
     height: 100%;
     width: auto;
     object-fit: cover;
-    transform: scale(0.5); /* уменьшение в 2 раза */
-    transform-origin: left center;
+    transform: none;   /* важно */
 }
 
 /* Правая нижняя картинка (увеличена в 1.5 раза) */
