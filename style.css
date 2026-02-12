@@ -1,13 +1,23 @@
-* Основные настройки */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Oswald', sans-serif;
-    background: url('plaster-bg.jpg') no-repeat center center fixed;
-    background-size: cover; /* Растягивает на весь экран */
+    background-color: #b56332; /* Основной цвет */
     position: relative;
     height: 100vh;
     overflow: hidden;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url('plaster-bg.jpg') center/cover;
+    opacity: 0.6; /* Насколько сильно видна текстура */
+    mix-blend-mode: overlay; /* Магия смешивания: overlay или multiply */
+    z-index: -1; /* Чтобы текст был поверх */
+    pointer-events: none;
 }
 /* Верхнее меню */
 .top-menu {
