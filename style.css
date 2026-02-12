@@ -2,13 +2,14 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Oswald', sans-serif;
-    /* Заменяем background-color на изображение */
     background: url('Gemini_Generated_Image_wplcj6wplcj6wplc.png') no-repeat center center fixed;
-    background-size: cover; /* Растягивает на весь экран */
+    background-size: cover;
     position: relative;
     height: 100vh;
-    overflow: hidden;
+    /* Убираем overflow: hidden, если планируется прокрутка контента в будущем */
+    overflow: hidden; 
 }
+
 /* Верхнее меню */
 .top-menu {
     position: absolute;
@@ -53,34 +54,4 @@ body {
     line-height: 1;
 }
 
-/* .side-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 25%;
-    overflow: hidden;
-}
-
-.side-image img {
-    height: 100%;
-    width: auto;
-    object-fit: cover;
-    transform: none;   /* важно */
-}
-
-/* Правая нижняя картинка (увеличена в 1.5 раза) */
-.bottom-right-image {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 300px;
-    transform: scale(1.5);
-    transform-origin: bottom right;
-}
-
-.bottom-right-image img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-} */
+/* Стили для .side-image и .bottom-right-image удалены */
