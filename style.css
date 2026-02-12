@@ -1,57 +1,68 @@
+/* Основные настройки */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Oswald', sans-serif;
-    background: url('Gemini_Generated_Image_wplcj6wplcj6wplc.png') no-repeat center center fixed;
+    /* Убедитесь, что имя файла совпадает с вашим изображением */
+    background: url('Gemini_Generated_Image_light.png') no-repeat center center fixed;
     background-size: cover;
     position: relative;
     height: 100vh;
-    /* Убираем overflow: hidden, если планируется прокрутка контента в будущем */
-    overflow: hidden; 
+    overflow: hidden;
 }
 
-/* Верхнее меню */
-.top-menu {
+/* Меню слева */
+.side-menu {
     position: absolute;
-    top: 25px;
-    right: 40px;
+    top: 50%; /* Центрируем по вертикали */
+    left: 60px; /* Отступ от левого края */
+    transform: translateY(-50%); /* Точное выравнивание по центру */
     display: flex;
-    gap: 25px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+    flex-direction: column; /* Пункты друг под другом */
+    gap: 30px; /* Расстояние между ссылками */
+    z-index: 10;
 }
 
-.top-menu a {
+.side-menu a {
     text-decoration: none;
-    color: #2F821B;
-    font-size: 20px;
-    transition: color 0.3s ease;
+    /* Благородный темно-зеленый (хвойный) */
+    color: #1a3c1a; 
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.4s ease;
+    opacity: 0.8;
 }
 
-.top-menu a:hover {
-    color: #93FADF;
+.side-menu a:hover {
+    color: #2F821B; /* Чуть светлее при наведении */
+    opacity: 1;
+    transform: translateX(10px); /* Легкое смещение вправо при наведении */
 }
 
-/* Центральная надпись */
+/* Стили центрального текста (пока не используются, так как он скрыт в HTML) */
 .center-text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: #2F821B;
+    color: #1a3c1a;
+    width: 100%;
+    pointer-events: none;
 }
 
 .center-text h1 {
     font-size: 110px;
     margin: 0;
     line-height: 0.9;
+    text-transform: uppercase;
 }
 
 .center-text h2 {
     font-size: 100px;
     margin: 0;
     line-height: 1;
+    text-transform: uppercase;
 }
-
-/* Стили для .side-image и .bottom-right-image удалены */
