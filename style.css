@@ -53,7 +53,7 @@ body {
     line-height: 1;
 }
 
-.side-image {
+/* .side-image {
     position: absolute;
     top: 0;
     left: 0;
@@ -83,4 +83,4 @@ body {
     width: 100%;
     height: auto;
     object-fit: cover;
-}
+} */
