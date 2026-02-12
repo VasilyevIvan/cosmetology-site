@@ -2,16 +2,9 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Oswald', sans-serif;
-    /* Добавляем временный цвет, чтобы видеть, работает ли фон вообще */
-    background-color: #2b2b2b; 
-    
-    /* Убедитесь, что название файла в кавычках и совпадает до буквы */
-    background-image: url('image_79267f.png'); 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    
+    /* Заменяем background-color на изображение */
+    background: url('image_79267f.png') no-repeat center center fixed;
+    background-size: cover; /* Растягивает на весь экран */
     position: relative;
     height: 100vh;
     overflow: hidden;
