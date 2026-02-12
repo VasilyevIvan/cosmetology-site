@@ -3,66 +3,71 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Oswald', sans-serif;
-    /* Убедитесь, что имя файла совпадает с вашим изображением */
+    /* Укажите имя вашего файла с текстурой */
     background: url('Gemini_Generated_Image_light.png') no-repeat center center fixed;
     background-size: cover;
-    position: relative;
     height: 100vh;
     overflow: hidden;
 }
 
-/* Меню слева */
+/* Контейнер меню (левая треть страницы) */
 .side-menu {
-    position: absolute;
-    top: 50%; /* Центрируем по вертикали */
-    left: 60px; /* Отступ от левого края */
-    transform: translateY(-50%); /* Точное выравнивание по центру */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 33.33%; /* Ровно 1/3 ширины */
+    height: 100%;
+    display: flex;
+    align-items: center; /* Центрируем по вертикали */
+    justify-content: flex-start; /* Прижимаем к левому краю */
+    padding-left: 80px; /* Эстетичный отступ от края экрана */
+    box-sizing: border-box;
+}
+
+/* Список пунктов */
+.menu-items {
     display: flex;
     flex-direction: column; /* Пункты друг под другом */
-    gap: 30px; /* Расстояние между ссылками */
-    z-index: 10;
+    gap: 40px; /* Большое расстояние для "воздуха" и релакса */
 }
 
 .side-menu a {
     text-decoration: none;
-    /* Благородный темно-зеленый (хвойный) */
+    /* Благородный темно-зеленый (Deep Forest) */
     color: #1a3c1a; 
-    font-size: 24px;
+    font-size: 28px; /* Увеличил размер для премиальности */
     font-weight: 600;
-    letter-spacing: 2px;
+    letter-spacing: 4px; /* Увеличенный межбуквенный интервал */
     text-transform: uppercase;
-    transition: all 0.4s ease;
-    opacity: 0.8;
+    transition: all 0.5s ease;
+    position: relative;
+    opacity: 0.9;
 }
 
+/* Эффект при наведении */
 .side-menu a:hover {
-    color: #2F821B; /* Чуть светлее при наведении */
+    color: #2F821B; 
     opacity: 1;
-    transform: translateX(10px); /* Легкое смещение вправо при наведении */
+    padding-left: 15px; /* Мягкое смещение вправо */
 }
 
-/* Стили центрального текста (пока не используются, так как он скрыт в HTML) */
-.center-text {
+/* Тонкая линия-декор перед активным пунктом (опционально) */
+.side-menu a::before {
+    content: '';
     position: absolute;
+    left: -30px;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #1a3c1a;
-    width: 100%;
-    pointer-events: none;
+    width: 0;
+    height: 1px;
+    background-color: #2F821B;
+    transition: width 0.5s ease;
 }
 
-.center-text h1 {
-    font-size: 110px;
-    margin: 0;
-    line-height: 0.9;
-    text-transform: uppercase;
+.side-menu a:hover::before {
+    width: 20px;
 }
 
-.center-text h2 {
-    font-size: 100px;
-    margin: 0;
-    line-height: 1;
-    text-transform: uppercase;
+/* Стили для текста (скрыты, но готовы) */
+.center-text {
+    display: none; /* Дополнительная страховка, чтобы не занимало место */
 }
