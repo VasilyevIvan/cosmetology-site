@@ -3,8 +3,10 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Oswald', sans-serif;
-    /* Укажите имя вашего файла с текстурой */
+    
+    /* Убедитесь, что этот файл лежит в той же папке, что и index.html */
     background: url('Gemini_Generated_Image_wplcj6wplcj6wplc.png') no-repeat center center fixed;
+    
     background-size: cover;
     height: 100vh;
     overflow: hidden;
@@ -15,59 +17,33 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 33.33%; /* Ровно 1/3 ширины */
+    width: 33.33%; 
     height: 100%;
     display: flex;
-    align-items: center; /* Центрируем по вертикали */
-    justify-content: flex-start; /* Прижимаем к левому краю */
-    padding-left: 80px; /* Эстетичный отступ от края экрана */
+    align-items: center; 
+    padding-left: 80px; 
     box-sizing: border-box;
+    z-index: 10;
 }
 
 /* Список пунктов */
 .menu-items {
     display: flex;
-    flex-direction: column; /* Пункты друг под другом */
-    gap: 40px; /* Большое расстояние для "воздуха" и релакса */
+    flex-direction: column; 
+    gap: 40px; 
 }
 
 .side-menu a {
     text-decoration: none;
-    /* Благородный темно-зеленый (Deep Forest) */
     color: #1a3c1a; 
-    font-size: 28px; /* Увеличил размер для премиальности */
+    font-size: 28px; 
     font-weight: 600;
-    letter-spacing: 4px; /* Увеличенный межбуквенный интервал */
+    letter-spacing: 4px; 
     text-transform: uppercase;
     transition: all 0.5s ease;
-    position: relative;
-    opacity: 0.9;
 }
 
-/* Эффект при наведении */
 .side-menu a:hover {
     color: #2F821B; 
-    opacity: 1;
-    padding-left: 15px; /* Мягкое смещение вправо */
-}
-
-/* Тонкая линия-декор перед активным пунктом (опционально) */
-.side-menu a::before {
-    content: '';
-    position: absolute;
-    left: -30px;
-    top: 50%;
-    width: 0;
-    height: 1px;
-    background-color: #2F821B;
-    transition: width 0.5s ease;
-}
-
-.side-menu a:hover::before {
-    width: 20px;
-}
-
-/* Стили для текста (скрыты, но готовы) */
-.center-text {
-    display: none; /* Дополнительная страховка, чтобы не занимало место */
+    padding-left: 15px;
 }
