@@ -1,27 +1,25 @@
-/* Основные настройки и фон */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Oswald', sans-serif;
-    /* Твой мраморный фон */
     background: url('Gemini_Generated_Image_wplcj6wplcj6wplc.png') no-repeat center center fixed;
     background-size: cover;
     height: 100vh;
     overflow: hidden;
     position: relative;
-    background-color: #fdf9f2; /* Резервный цвет (беж) */
+    background-color: #fdf9f2;
 }
 
-/* --- ВЕРТИКАЛЬНОЕ МЕНЮ (ЛЕВАЯ ТРЕТЬ) --- */
+/* --- МЕНЮ (30% ширины) --- */
 .side-menu {
     position: fixed;
     top: 0;
     left: 0;
-    width: 33.33%; 
+    width: 30%; 
     height: 100%;
     display: flex;
     align-items: center; 
-    padding-left: 80px; 
+    padding-left: 60px; 
     box-sizing: border-box;
     z-index: 20;
 }
@@ -29,66 +27,67 @@ body {
 .menu-items {
     display: flex;
     flex-direction: column; 
-    gap: 50px; 
+    gap: 40px; 
 }
 
 .side-menu a {
     text-decoration: none;
-    color: #1a3c1a; /* Благородный темно-зеленый */
-    font-size: 36px; 
+    color: #1a3c1a; 
+    font-size: 32px; 
     font-weight: 600;
-    letter-spacing: 5px; 
+    letter-spacing: 4px; 
     text-transform: uppercase;
     transition: all 0.5s ease;
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
 .side-menu a:hover {
     color: #2F821B; 
     opacity: 1;
-    padding-left: 20px;
+    transform: translateX(10px);
 }
 
-/* --- ЦЕНТРАЛЬНОЕ НАЗВАНИЕ --- */
+/* --- ЦЕНТРАЛЬНОЕ НАЗВАНИЕ (В свободном коридоре) --- */
 .center-text {
     position: absolute;
     top: 50%;
-    left: 55%; /* Оптический баланс: чуть правее центра из-за меню */
+    /* Смещаем в центр свободного пространства между меню и фото */
+    left: 45%; 
     transform: translate(-50%, -50%);
     text-align: center;
     z-index: 10;
     pointer-events: none;
-    animation: fadeIn 2s ease-in-out; /* Плавное появление */
+    width: 40%; /* Ограничиваем ширину, чтобы текст не разрастался к краям */
 }
 
 .main-title {
     color: #1a3c1a;
-    font-size: 80px;
+    font-size: clamp(40px, 5vw, 70px); /* Адаптивный размер шрифта */
     font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: 15px;
+    letter-spacing: 12px;
     line-height: 1.1;
     margin: 0;
 }
 
 .main-title span {
     display: block;
-    font-size: 60px;
+    font-size: clamp(30px, 4vw, 55px);
     font-weight: 600;
-    letter-spacing: 22px;
-    margin-top: 10px;
+    letter-spacing: 18px;
+    margin-top: 5px;
 }
 
-/* --- КАРТИНКА СПРАВА (ИНТЕГРИРОВАННАЯ) --- */
+/* --- КАРТИНКА СПРАВА (Уменьшенная зона) --- */
 .hero-right {
     position: absolute;
     top: 0;
     right: 0;
-    width: 50%;
+    width: 35%; /* Уменьшили с 50%, чтобы освободить место для названия */
     height: 100vh;
     z-index: 1;
-    mix-blend-mode: multiply; /* Смешивает фото с текстурой мрамора */
-    opacity: 0.85;
+    mix-blend-mode: multiply; 
+    opacity: 0.8;
     pointer-events: none;
 }
 
@@ -96,21 +95,23 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: top center;
-    filter: sepia(15%) contrast(105%); /* Мягкая цветокоррекция */
+    object-position: center; /* Центрируем саму девушку внутри блока */
+    filter: sepia(10%) contrast(105%);
 }
 
-/* Простая анимация появления */
+/* Анимация появления */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from { opacity: 0; transform: translate(-50%, -45%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
 }
 
-/* Адаптация для мобильных: если экран меньше 768px, скрываем лишнее */
-@media (max-width: 768px) {
-    .hero-right { display: none; }
-    .side-menu { width: 100%; padding-left: 40px; }
-    .main-title { font-size: 40px; }
-    .main-title span { font-size: 30px; }
-    .center-text { left: 50%; top: 20%; }
+.center-text {
+    animation: fadeIn 2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Мобильная адаптация */
+@media (max-width: 1024px) {
+    .hero-right { width: 40%; opacity: 0.5; } /* Делаем прозрачнее на планшетах */
+    .center-text { left: 50%; width: 80%; }
+    .side-menu { display: none; } /* Или можно сделать бургер-меню */
 }
