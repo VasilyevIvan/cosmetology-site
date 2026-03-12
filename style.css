@@ -1,3 +1,4 @@
+/* Основные настройки */
 body {
     margin: 0;
     padding: 0;
@@ -10,7 +11,7 @@ body {
     background-color: #fdf9f2;
 }
 
-/* --- МЕНЮ (30% ширины) --- */
+/* --- ВЕРТИКАЛЬНОЕ МЕНЮ (ЛЕВАЯ ТРЕТЬ) --- */
 .side-menu {
     position: fixed;
     top: 0;
@@ -27,7 +28,7 @@ body {
 .menu-items {
     display: flex;
     flex-direction: column; 
-    gap: 40px; 
+    gap: 35px; /* Немного уменьшили отступ, чтобы 4 пункта смотрелись гармонично */
 }
 
 .side-menu a {
@@ -44,25 +45,25 @@ body {
 .side-menu a:hover {
     color: #2F821B; 
     opacity: 1;
-    transform: translateX(10px);
+    transform: translateX(15px); /* Плавный выезд вправо при наведении */
 }
 
-/* --- ЦЕНТРАЛЬНОЕ НАЗВАНИЕ (В свободном коридоре) --- */
+/* --- ЦЕНТРАЛЬНОЕ НАЗВАНИЕ --- */
 .center-text {
     position: absolute;
     top: 50%;
-    /* Смещаем в центр свободного пространства между меню и фото */
-    left: 45%; 
+    left: 45%; /* Смещение для баланса */
     transform: translate(-50%, -50%);
     text-align: center;
     z-index: 10;
     pointer-events: none;
-    width: 40%; /* Ограничиваем ширину, чтобы текст не разрастался к краям */
+    width: 40%;
+    animation: fadeIn 2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main-title {
     color: #1a3c1a;
-    font-size: clamp(40px, 5vw, 70px); /* Адаптивный размер шрифта */
+    font-size: clamp(40px, 5vw, 70px);
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 12px;
@@ -78,12 +79,12 @@ body {
     margin-top: 5px;
 }
 
-/* --- КАРТИНКА СПРАВА (Уменьшенная зона) --- */
+/* --- КАРТИНКА СПРАВА --- */
 .hero-right {
     position: absolute;
     top: 0;
     right: 0;
-    width: 35%; /* Уменьшили с 50%, чтобы освободить место для названия */
+    width: 35%; 
     height: 100vh;
     z-index: 1;
     mix-blend-mode: multiply; 
@@ -95,23 +96,19 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center; /* Центрируем саму девушку внутри блока */
+    object-position: center;
     filter: sepia(10%) contrast(105%);
 }
 
-/* Анимация появления */
+/* Анимация проявления текста */
 @keyframes fadeIn {
     from { opacity: 0; transform: translate(-50%, -45%); }
     to { opacity: 1; transform: translate(-50%, -50%); }
 }
 
-.center-text {
-    animation: fadeIn 2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Мобильная адаптация */
+/* Адаптация для мобильных */
 @media (max-width: 1024px) {
-    .hero-right { width: 40%; opacity: 0.5; } /* Делаем прозрачнее на планшетах */
-    .center-text { left: 50%; width: 80%; }
-    .side-menu { display: none; } /* Или можно сделать бургер-меню */
+    .hero-right { display: none; }
+    .side-menu { width: 100%; padding-left: 40px; }
+    .center-text { left: 50%; width: 90%; top: 20%; }
 }
