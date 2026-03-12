@@ -1,4 +1,4 @@
-/* Базовые настройки */
+/* ОБЩИЕ СТИЛИ */
 body {
     margin: 0;
     padding: 0;
@@ -6,113 +6,117 @@ body {
     background: url('Gemini_Generated_Image_wplcj6wplcj6wplc.png') no-repeat center center fixed;
     background-size: cover;
     height: 100vh;
+    overflow: hidden;
+    position: relative;
     color: #1a3c1a;
 }
 
-/* МЕНЮ СЛЕВА (Фиксированное) */
+/* МЕНЮ (Одинаковое везде) */
 .side-menu {
     position: fixed;
     top: 0;
     left: 0;
-    width: 25%; /* Занимает четверть экрана */
-    height: 100vh;
+    width: 30%; 
+    height: 100%;
     display: flex;
-    align-items: center;
-    padding-left: 50px;
+    align-items: center; 
+    padding-left: 60px; 
+    box-sizing: border-box;
     z-index: 100;
 }
 
 .menu-items {
     display: flex;
-    flex-direction: column;
-    gap: 30px;
+    flex-direction: column; 
+    gap: 40px; 
 }
 
 .side-menu a {
     text-decoration: none;
-    color: #1a3c1a;
-    font-size: 24px;
+    color: #1a3c1a; 
+    font-size: 32px; 
     font-weight: 600;
+    letter-spacing: 4px; 
     text-transform: uppercase;
-    letter-spacing: 3px;
-    transition: 0.3s;
+    transition: all 0.5s ease;
+    opacity: 0.8;
 }
 
 .side-menu a:hover {
-    color: #2F821B;
-    padding-left: 10px;
+    color: #2F821B; 
+    opacity: 1;
+    transform: translateX(10px);
 }
 
-/* ОБОЛОЧКА ДЛЯ ЦЕНТРИРОВАНИЯ КОНТЕНТА */
-.content-wrapper {
-    margin-left: 25%; /* Отступаем от меню */
-    width: 75%;
+/* --- ТОЛЬКО ДЛЯ ГЛАВНОЙ (home-page) --- */
+.home-page .center-text {
+    position: absolute;
+    top: 50%;
+    left: 45%; 
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+}
+
+.home-page .main-title {
+    font-size: clamp(40px, 5vw, 75px);
+    text-transform: uppercase;
+    letter-spacing: 12px;
+    margin: 0;
+}
+
+.home-page .main-title span {
+    display: block;
+    font-size: clamp(30px, 4vw, 60px);
+    font-weight: 600;
+    letter-spacing: 18px;
+}
+
+.home-page .hero-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 35%; 
+    height: 100vh;
+    z-index: 1;
+    mix-blend-mode: multiply; 
+    opacity: 0.8;
+}
+
+.home-page .hero-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- ТОЛЬКО ДЛЯ СТРАНИЦЫ "О НАС" (about-page) --- */
+.about-page .text-content {
+    margin-left: 35%; /* Отступаем от меню, чтобы ничего не наслоилось */
+    width: 50%;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    padding-right: 50px;
 }
 
-/* АККУРАТНЫЙ КВАДРАТ (Content Box) */
-.content-box {
-    width: 500px; /* Фиксированная ширина квадрата */
-    background: rgba(255, 255, 255, 0.9); /* Светлая подложка */
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    backdrop-filter: blur(10px);
-}
-
-.map-top {
-    width: 100%;
-    height: 300px;
-    border-bottom: 2px solid #1a3c1a;
-}
-
-.info-bottom {
-    padding: 30px;
-    text-align: center;
-}
-
-.info-bottom h1 {
-    margin: 0 0 15px 0;
-    font-size: 32px;
-    letter-spacing: 5px;
+.about-page h1 {
+    font-size: 50px;
+    letter-spacing: 8px;
     text-transform: uppercase;
+    margin-bottom: 30px;
 }
 
-.info-bottom p {
-    font-size: 18px;
-    margin: 10px 0;
+.about-page p {
+    font-size: 22px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-weight: 400;
 }
 
-.info-bottom a {
-    color: #1a3c1a;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.working-hours {
-    font-weight: 600;
-    margin-top: 15px !important;
-    color: #2F821B;
-}
-
-/* Адаптация для мобильных */
-@media (max-width: 900px) {
-    .side-menu {
-        position: relative;
-        width: 100%;
-        height: auto;
-        padding: 20px;
-        justify-content: center;
-    }
-    .content-wrapper {
-        margin-left: 0;
-        width: 100%;
-        padding: 20px;
-    }
-    .content-box {
-        width: 100%;
-    }
+/* Мобильная адаптация */
+@media (max-width: 1024px) {
+    .home-page .hero-right { display: none; }
+    .about-page .text-content { margin-left: 10%; width: 80%; }
+    .side-menu { width: 100%; position: relative; height: auto; padding: 20px; }
 }
