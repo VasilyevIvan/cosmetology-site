@@ -9,55 +9,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="contacts-page">
+<body class="page-contacts">
 
     <nav class="side-menu">
         <div class="menu-items">
             <a href="index.html">Главная</a>
             <a href="services.html">Услуги</a>
-            <a href="about.html">О нас</a>
             <a href="contacts.html">Контакты</a>
         </div>
     </nav>
 
-    <div class="main-wrapper">
-        <main class="contacts-container">
-            <div class="contacts-info">
-                <h1 class="contacts-title">Контакты</h1>
-
-                <nav class="side-menu">
-                    <div class="menu-items">
-                        <a href="index.html">Главная</a>
-                        <a href="services.html">Услуги</a>
-                        <a href="about.html">О нас</a>
-                        <a href="contacts.html">Контакты</a>
-                    </div>
-                </nav>
-                
-                <div class="info-block">
-                    <h3>Адрес</h3>
-                    <p>Тюмень, Широтная улица, 29</p>
-                    <p>1 этаж, Шестой м-н</p>
-                </div>
-
-                <div class="info-block">
-                    <h3>Режим работы</h3>
-                    <p>09:00 – 20:00</p>
-                    <p class="note">По предварительной записи</p>
-                </div>
-
-                <div class="info-block">
-                    <h3>Телефоны</h3>
-                    <p><a href="tel:+73452608381">+7 (3452) 608–381</a></p>
-                    <p><a href="tel:+79222662176">+7–922–266–21–76</a></p>
-                </div>
+    <main class="contacts-centered-wrapper">
+        <div class="contacts-card">
+            <h1>Контакты</h1>
+            
+            <div class="map-square">
+                <iframe src="https://yandex.ru/map-widget/v1/?ll=65.594747%2C57.123214&z=16" width="100%" height="100%" frameborder="0"></iframe>
             </div>
 
-            <div class="map-wrapper">
-                <iframe src="https://yandex.ru/map-widget/v1/?ll=65.594747%2C57.123214&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NjU0OTY3NxI_0KDQvtGB0YHQuNGPLCDQotGO0LzQtdC90YwsINCo0LjRgNC-0YLQvdCw0Y8g0YPQu9C40YbQsCwgMjkKDWY9BhIC0A9C&z=16" width="100%" height="400" frameborder="0" allowfullscreen="true"></iframe>
+            <div class="details-bottom">
+                <p class="address">Тюмень, Широтная улица, 29, 1 этаж</p>
+                <div class="phones">
+                    <a href="tel:+73452608381">+7 (3452) 608–381</a>
+                    <span class="separator">|</span>
+                    <a href="tel:+79222662176">+7–922–266–21–76</a>
+                </div>
+                <p class="hours">Ежедневно: 09:00 – 20:00 (по записи)</p>
             </div>
-        </main>
-    </div>
+        </div>
+    </main>
 
 </body>
 </html>
