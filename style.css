@@ -1,4 +1,4 @@
-/* Основные настройки */
+/* Базовые настройки */
 body {
     margin: 0;
     padding: 0;
@@ -6,179 +6,113 @@ body {
     background: url('Gemini_Generated_Image_wplcj6wplcj6wplc.png') no-repeat center center fixed;
     background-size: cover;
     height: 100vh;
-    overflow: hidden;
-    position: relative;
-    background-color: #fdf9f2;
+    color: #1a3c1a;
 }
 
-/* --- ВЕРТИКАЛЬНОЕ МЕНЮ (ЛЕВАЯ ТРЕТЬ) --- */
+/* МЕНЮ СЛЕВА (Фиксированное) */
 .side-menu {
     position: fixed;
     top: 0;
     left: 0;
-    width: 30%; 
-    height: 100%;
+    width: 25%; /* Занимает четверть экрана */
+    height: 100vh;
     display: flex;
-    align-items: center; 
-    padding-left: 60px; 
-    box-sizing: border-box;
-    z-index: 20;
+    align-items: center;
+    padding-left: 50px;
+    z-index: 100;
 }
 
 .menu-items {
     display: flex;
-    flex-direction: column; 
-    gap: 35px; /* Немного уменьшили отступ, чтобы 4 пункта смотрелись гармонично */
+    flex-direction: column;
+    gap: 30px;
 }
 
 .side-menu a {
     text-decoration: none;
-    color: #1a3c1a; 
-    font-size: 32px; 
+    color: #1a3c1a;
+    font-size: 24px;
     font-weight: 600;
-    letter-spacing: 4px; 
     text-transform: uppercase;
-    transition: all 0.5s ease;
-    opacity: 0.8;
+    letter-spacing: 3px;
+    transition: 0.3s;
 }
 
 .side-menu a:hover {
-    color: #2F821B; 
-    opacity: 1;
-    transform: translateX(15px); /* Плавный выезд вправо при наведении */
+    color: #2F821B;
+    padding-left: 10px;
 }
 
-/* --- ЦЕНТРАЛЬНОЕ НАЗВАНИЕ --- */
-.center-text {
-    position: absolute;
-    top: 50%;
-    left: 45%; /* Смещение для баланса */
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 10;
-    pointer-events: none;
-    width: 40%;
-    animation: fadeIn 2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.main-title {
-    color: #1a3c1a;
-    font-size: clamp(40px, 5vw, 70px);
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 12px;
-    line-height: 1.1;
-    margin: 0;
-}
-
-.main-title span {
-    display: block;
-    font-size: clamp(30px, 4vw, 55px);
-    font-weight: 600;
-    letter-spacing: 18px;
-    margin-top: 5px;
-}
-
-/* --- КАРТИНКА СПРАВА --- */
-.hero-right {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 35%; 
+/* ОБОЛОЧКА ДЛЯ ЦЕНТРИРОВАНИЯ КОНТЕНТА */
+.content-wrapper {
+    margin-left: 25%; /* Отступаем от меню */
+    width: 75%;
     height: 100vh;
-    z-index: 1;
-    mix-blend-mode: multiply; 
-    opacity: 0.8;
-    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.hero-right img {
+/* АККУРАТНЫЙ КВАДРАТ (Content Box) */
+.content-box {
+    width: 500px; /* Фиксированная ширина квадрата */
+    background: rgba(255, 255, 255, 0.9); /* Светлая подложка */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+}
+
+.map-top {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    filter: sepia(10%) contrast(105%);
+    height: 300px;
+    border-bottom: 2px solid #1a3c1a;
 }
 
-/* Анимация проявления текста */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translate(-50%, -45%); }
-    to { opacity: 1; transform: translate(-50%, -50%); }
+.info-bottom {
+    padding: 30px;
+    text-align: center;
+}
+
+.info-bottom h1 {
+    margin: 0 0 15px 0;
+    font-size: 32px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.info-bottom p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.info-bottom a {
+    color: #1a3c1a;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.working-hours {
+    font-weight: 600;
+    margin-top: 15px !important;
+    color: #2F821B;
 }
 
 /* Адаптация для мобильных */
-@media (max-width: 1024px) {
-    .hero-right { display: none; }
-    .side-menu { width: 100%; padding-left: 40px; }
-    .center-text { left: 50%; width: 90%; top: 20%; }
-}
-
-
-
-/* Специальный класс для body страницы контактов, чтобы не сломать главную */
-.contacts-page {
-    overflow-y: auto; /* Разрешаем прокрутку, если контент не влезет */
-}
-
-/* Центрирующая оболочка */
-.main-wrapper {
-    display: flex;
-    justify-content: flex-end; /* Сдвигаем контент вправо, освобождая место под меню */
-    align-items: center;
-    min-height: 100vh;
-    width: 100%;
-    padding-left: 30%; /* Место для меню */
-    box-sizing: border-box;
-}
-
-.contacts-container {
-    display: flex;
-    width: 90%;
-    max-width: 1100px;
-    gap: 40px;
-    background: rgba(255, 255, 255, 0.2); /* Легкая подложка для читаемости */
-    padding: 40px;
-    border-radius: 8px;
-    backdrop-filter: blur(5px); /* Размытие фона под контактами */
-    margin-right: 40px;
-}
-
-.contacts-info {
-    flex: 1;
-    min-width: 250px;
-}
-
-.map-wrapper {
-    flex: 1.5;
-    min-width: 300px;
-    height: 400px;
-    border: 1px solid #1a3c1a;
-    border-radius: 4px;
-    overflow: hidden;
-}
-
-/* Убираем абсолютное позиционирование для контактов, которое вызывало наслоение */
-.contacts-info h1 {
-    margin-top: 0;
-    font-size: 40px;
-    letter-spacing: 5px;
-}
-
-/* Мобильная версия: ставим карту под текст */
 @media (max-width: 900px) {
-    .main-wrapper {
-        padding-left: 0;
-        padding-top: 100px;
-    }
-    .contacts-container {
-        flex-direction: column;
-        margin: 20px;
-        width: auto;
-    }
     .side-menu {
-        height: auto;
-        width: 100%;
         position: relative;
+        width: 100%;
+        height: auto;
         padding: 20px;
+        justify-content: center;
+    }
+    .content-wrapper {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+    .content-box {
+        width: 100%;
     }
 }
